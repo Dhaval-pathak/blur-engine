@@ -28,6 +28,7 @@ program
   .option('-d, --duration <seconds>', 'Blur reveal duration in seconds', '5')
   .option('--clues <number>', 'Number of clues', '3')
   .option('-o, --output <dir>', 'Output directory', './output')
+  .option('--use-existing-image', 'Use existing image from output/images (for testing)')
   .option('--clean', 'Clean audio directory after generation')
   .action(async (options) => {
     console.log(chalk.bold.cyan('\n🎨 Blur Reveal Engine\n'));
@@ -39,6 +40,7 @@ program
         subject: options.subject,
         duration: parseInt(options.duration, 10),
         clues: parseInt(options.clues, 10),
+        useExistingImage: options.useExistingImage || false,
       };
 
       console.log(chalk.gray('CLI Options:'));
@@ -50,6 +52,9 @@ program
       }
       console.log(chalk.gray(`  Duration: ${options.duration}s`));
       console.log(chalk.gray(`  Clues: ${options.clues}`));
+      if (options.useExistingImage) {
+        console.log(chalk.yellow(`  🔄 Testing mode: Reusing existing image`));
+      }
       console.log('');
 
       // Initialize orchestrator

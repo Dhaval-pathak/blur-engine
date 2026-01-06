@@ -71,15 +71,16 @@ export class Orchestrator {
       console.log(`   Subject: ${subject}`);
       console.log(`   Category: ${config.category}\n`);
 
-      // Step 2: Generate image with Gemini 2.5 Flash Image
-      console.log('🎨 Step 2: Generating image with Gemini AI...');
-      const imagePrompt = PROMPTS.buildImagePrompt(config.category, subject);
+      // Step 2: TESTING MODE - Always use existing image
+      console.log('🔄 Step 2: Using existing image (TESTING MODE - No API cost)...');
       const timestamp = generateTimestamp();
-      const imageName = `${sanitizeFilename(subject)}_${timestamp}.png`;
+      
+      // Hardcode existing image - ALWAYS skip generation
+      const imageName = 'big_ben_2026-01-06T10-04-18-934Z.png';
       const imagePath = path.join(this.outputDir, 'images', imageName);
       
-      const imageResult = await this.imageGenerator.generateImage(imagePrompt, imagePath);
-      console.log(`   Image saved: ${imagePath}\n`);
+      console.log(`   ✅ Using: ${imageName}`);
+      console.log(`   💰 Skipping image generation - NO COST!\n`);
 
       // Step 3: Generate clues with Gemini 2.5 Flash (text)
       console.log('💡 Step 3: Generating clues with Gemini AI...');
