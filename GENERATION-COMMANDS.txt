@@ -1,0 +1,89 @@
+# Blur Reveal Video Generation Commands
+
+## Basic Commands
+
+# Generate random monument
+npm run generate generate
+
+# Generate specific monument
+npm run generate generate -- --category monuments --subject "Taj Mahal"
+npm run generate generate -- --category monuments --subject "Eiffel Tower"
+npm run generate generate -- --category monuments --subject "Colosseum"
+
+# Generate random car
+npm run generate generate -- --category cars
+
+# Generate specific cars
+npm run generate generate -- --category cars --subject "Ferrari F8 Tributo"
+npm run generate generate -- --category cars --subject "Lamborghini Aventador"
+npm run generate generate -- --category cars --subject "Porsche 911"
+
+# Generate random gym equipment
+npm run generate generate -- --category gym
+
+# Generate specific gym equipment
+npm run generate generate -- --category gym --subject "Dumbbell"
+npm run generate generate -- --category gym --subject "Barbell"
+
+## Custom Duration & Clues
+
+# Short reveal (3 seconds, 2 clues)
+npm run generate generate -- --duration 3 --clues 2
+
+# Long reveal (8 seconds, 4 clues)
+npm run generate generate -- --duration 8 --clues 4
+
+# Medium reveal with custom subject
+npm run generate generate -- --category monuments --subject "Great Wall of China" --duration 6 --clues 3
+
+## Batch Generation
+
+# Generate from batch config
+npm run generate batch -- --file configs/batch-example.json
+
+# Generate monuments batch
+npm run generate batch -- --file configs/monuments-example.json
+
+# Generate cars batch
+npm run generate batch -- --file configs/cars-example.json
+
+# Generate maximum 10 videos from batch
+npm run generate batch -- --file configs/batch-example.json --max 10
+
+## Utility Commands
+
+# List all available subjects
+npm run generate list
+
+# List specific category
+npm run generate list -- --category monuments
+npm run generate list -- --category cars
+npm run generate list -- --category gym
+
+# Test system configuration
+npm run generate test
+
+# List available TTS voices
+npm run generate voices
+
+## Advanced Examples
+
+# High-quality long reveal
+npm run generate generate -- --category cars --subject "Bugatti Chiron" --duration 7 --clues 4
+
+# Quick teaser
+npm run generate generate -- --category monuments --subject "Statue of Liberty" --duration 4 --clues 2
+
+# Clean audio after generation
+npm run generate generate -- --category gym --clean
+
+## Batch Examples
+
+# Generate 5 different monuments
+npm run generate batch -- --file configs/monuments-batch.json --max 5
+
+# Generate all gym equipment
+npm run generate batch -- --file configs/gym-batch.json
+
+# Generate mixed categories
+npm run generate batch -- --file configs/mixed-batch.json

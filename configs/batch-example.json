@@ -1,0 +1,42 @@
+[
+  {
+    "category": "monuments",
+    "subject": "Taj Mahal",
+    "duration": 5,
+    "clues": 3
+  },
+  {
+    "category": "monuments",
+    "subject": "Eiffel Tower",
+    "duration": 5,
+    "clues": 3
+  },
+  {
+    "category": "monuments",
+    "subject": "Colosseum",
+    "duration": 5,
+    "clues": 3
+  },
+  {
+    "category": "cars",
+    "subject": "Ferrari F8 Tributo",
+    "duration": 6,
+    "clues": 3
+  },
+  {
+    "category": "cars",
+    "subject": "Lamborghini Aventador",
+    "duration": 6,
+    "clues": 3
+  },
+  {
+    "category": "gym",
+    "duration": 5,
+    "clues": 3
+  },
+  {
+    "category": "gym",
+    "duration": 5,
+    "clues": 3
+  }
+]
